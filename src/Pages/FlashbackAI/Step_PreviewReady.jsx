@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "./Button";
 import AnnouncementBar from "../../Shared/AnnouncementBar";
+import { useNavigate } from "react-router-dom";
 
 export const Step_PreviewReady = ({ onNext, imageUrl }) => {
+  const navigate = useNavigate();
   return (
     <div className="w-full mx-auto text-center animate-in fade-in zoom-in-95 duration-700">
       <AnnouncementBar />
@@ -44,12 +46,11 @@ export const Step_PreviewReady = ({ onNext, imageUrl }) => {
 
       {/* CTA Button */}
       <div className="max-w-xs mx-auto">
-        <Button
-          //   onClick={onNext}
-          className="w-full py-4 text-sm md:text-base font-semibold tracking-wide shadow-lg"
-        >
-          See your live movement
-        </Button>
+        <div onClick={() => navigate("/pricing")}>
+          <Button className="w-full py-4 text-sm md:text-base font-semibold tracking-wide shadow-lg">
+            See your live movement
+          </Button>
+        </div>
       </div>
     </div>
   );
