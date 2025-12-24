@@ -1,7 +1,9 @@
 import React from "react";
 import { ImagePlus, Upload } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const DashboardHome = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col h-full bg-[#fdfcfb]/50">
       {/* Promo Banner */}
@@ -28,7 +30,10 @@ export const DashboardHome = () => {
       </div>
 
       {/* Upload Action Button */}
-      <div className="p-8 pb-12 flex justify-center">
+      <div
+        onClick={() => navigate("/dashboard/moments")}
+        className="p-8 pb-12 flex justify-center"
+      >
         <button className="bg-[#7c602e] hover:bg-[#634d25] text-white w-full max-w-md py-4 rounded-xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-[#7c602e]/20 active:scale-[0.98] transition-all">
           <Upload size={20} />
           <span>Upload Photo</span>

@@ -50,7 +50,7 @@ export const Sidebar = ({ className }) => {
               >
                 {/* Clone icon to apply active color if necessary */}
                 {React.cloneElement(item.icon, {
-                  className: isActive ? "text-[#7c602e]" : "text-gray-400"
+                  className: isActive ? "text-[#7c602e]" : "text-gray-400",
                 })}
                 <span className="text-[15px]">{item.label}</span>
               </button>
@@ -61,7 +61,10 @@ export const Sidebar = ({ className }) => {
         {/* Promo Cards */}
         <div className="space-y-4">
           {/* Invite Card */}
-          <div className="bg-gradient-to-br from-[#7c602e] to-[#b4925a] p-5 rounded-[1.5rem] text-white relative cursor-pointer group shadow-lg shadow-[#7c602e]/10">
+          <div
+            onClick={() => navigate("/dashboard/invite")}
+            className="bg-gradient-to-br from-[#7c602e] to-[#b4925a] p-5 rounded-[1.5rem] text-white relative cursor-pointer group shadow-lg shadow-[#7c602e]/10"
+          >
             <div className="flex justify-between items-start">
               <div className="bg-white/20 p-2 rounded-lg">
                 <Gift size={24} />
@@ -74,7 +77,8 @@ export const Sidebar = ({ className }) => {
             <div className="mt-4">
               <p className="font-bold text-[15px]">Invite a friend</p>
               <p className="text-[11px] text-white/80 leading-tight mt-1">
-                Get 10 coins for each<br /> invitation
+                Get 10 coins for each
+                <br /> invitation
               </p>
             </div>
           </div>
@@ -107,7 +111,9 @@ export const Sidebar = ({ className }) => {
             </div>
             <div className="overflow-hidden">
               <p className="text-[13px] font-bold truncate">Profile</p>
-              <p className="text-[11px] text-gray-400 truncate">xxx@gmail.com</p>
+              <p className="text-[11px] text-gray-400 truncate">
+                xxx@gmail.com
+              </p>
             </div>
           </div>
           <MoreVertical size={18} className="text-gray-400 flex-shrink-0" />

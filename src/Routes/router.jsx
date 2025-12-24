@@ -10,6 +10,8 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import { GetCoinsPage } from "../Pages/Dashboard/GetCoinsPage";
 import { DashboardLayout } from "../Pages/Dashboard/DashboardLayout";
 import { DashboardHome } from "../Pages/Dashboard/DashboardHome";
+import { InviteFriendsPage } from "../Pages/Dashboard/InviteFriendsPage";
+import { MomentsGallery } from "../Pages/Dashboard/MomentsGallery";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ export const router = createBrowserRouter([
       {
         path: "get-coins",
         element: <GetCoinsPage />,
+      },
+      {
+        path: "invite",
+        element: <InviteFriendsPage />,
+      },
+      {
+        path: "moments",
+        element: <MomentsGallery />,
       },
     ],
   },
