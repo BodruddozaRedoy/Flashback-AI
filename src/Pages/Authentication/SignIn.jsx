@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaGoogle, FaFacebook, FaEye, FaEyeSlash } from "react-icons/fa"
-import wencong_logo from '../../../public/huntrerboom_logo.png'
+import wencong_logo from "../../../public/logo.png";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)

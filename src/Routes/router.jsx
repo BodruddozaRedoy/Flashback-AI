@@ -5,6 +5,7 @@ import FlashbackOnboarding from "../Pages/FlashbackAI/FlashbackOnboarding";
 import { Step5_Login } from "../Pages/FlashbackAI/Step5_Login";
 import { Step_PreviewReady } from "../Pages/FlashbackAI/Step_PreviewReady";
 import PricingPage from "../Pages/Pricing/PricingPage";
+import LoginPage from "../Pages/Authentication/SignIn";
 
 export const router = createBrowserRouter([
   {
@@ -26,5 +27,9 @@ export const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <PricingPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);

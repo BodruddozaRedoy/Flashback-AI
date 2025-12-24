@@ -32,6 +32,13 @@ export const Step5_Login = ({ onNext }) => {
             className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white focus:ring-2 focus:ring-[#7c602e]/20 outline-none transition-all placeholder:text-gray-300"
           />
         </div>
+        <div className="relative">
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white focus:ring-2 focus:ring-[#7c602e]/20 outline-none transition-all placeholder:text-gray-300"
+          />
+        </div>
 
         <div onClick={() => navigate("/step-preview")}>
           <Button className="w-full py-3.5 rounded-xl text-white font-semibold text-base shadow-sm">
