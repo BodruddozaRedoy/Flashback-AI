@@ -28,17 +28,34 @@ export const PricingSection = () => {
         Watch Your Photo Come Alive Before Your Eyes
       </h1>
       <p className="text-gray-600 font-medium mb-6 text-2xl">
-        Your exclusive <span className="text-[#7c602e] font-bold underline decoration-yellow-400 decoration-2">60%</span> discount is active — don't miss it
+        Your exclusive{" "}
+        <span className="text-[#7c602e] font-bold underline decoration-yellow-400 decoration-2">
+          60%
+        </span>{" "}
+        discount is active — don't miss it
       </p>
 
       {/* Social Proof Mini */}
       <div className=" items-center border border-primary px-4 py-2 rounded-full inline-flex justify-center gap-2 mb-10">
         <div className="flex -space-x-1.5">
-          {[1, 2, 3, 4].map(i => <div key={i} className="w-5 h-5 rounded-full border border-white bg-gray-200" />)}
+          {[1, 2, 3, 4].map((i) => (
+            <div
+              key={i}
+              className="w-5 h-5 rounded-full border border-white bg-gray-200"
+            />
+          ))}
         </div>
-        <p className='text-xs font-light'>Excellent</p>
-        <div className="flex text-primary gap-1"><Star size={12} fill="currentColor" /> <Star size={12} fill="currentColor" /> <Star size={12} fill="currentColor" /> <Star size={12} fill="currentColor" /> <Star size={12} fill="currentColor" /></div>
-        <span className="text-[10px] text-black font-bold uppercase tracking-wider">4.7 (2,487 Happy Users)</span>
+        <p className="text-xs font-light">Excellent</p>
+        <div className="flex text-primary gap-1">
+          <Star size={12} fill="currentColor" />{" "}
+          <Star size={12} fill="currentColor" />{" "}
+          <Star size={12} fill="currentColor" />{" "}
+          <Star size={12} fill="currentColor" />{" "}
+          <Star size={12} fill="currentColor" />
+        </div>
+        <span className="text-[10px] text-black font-bold uppercase tracking-wider">
+          4.7 (2,487 Happy Users)
+        </span>
       </div>
 
       {/* Features List */}
@@ -49,8 +66,10 @@ export const PricingSection = () => {
             <div key={idx} className="flex items-start gap-3">
               <div className="mt-1">{item.icon}</div>
               <div>
-                <p className="text-xs font-bold text-gray-800">{item.name}</p>
-                <p className="text-[10px] text-gray-500 leading-tight">{item.desc}</p>
+                <p className="text-md font-bold text-gray-800">{item.name}</p>
+                <p className="text-[10px] text-gray-500 leading-tight">
+                  {item.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -66,23 +85,49 @@ export const PricingSection = () => {
                 {pkg.label}
               </div>
             )}
-            <label className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
-              selected === pkg.id ? 'border-yellow-400 bg-white ring-1 ring-yellow-400' : 'border-gray-100 bg-white hover:border-gray-200'
-            }`}>
-              <input type="radio" name="plan" className="hidden" onChange={() => setSelected(pkg.id)} checked={selected === pkg.id} />
+            <label
+              className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                selected === pkg.id
+                  ? "border-yellow-400 bg-white ring-1 ring-yellow-400"
+                  : "border-gray-100 bg-white hover:border-gray-200"
+              }`}
+            >
+              <input
+                type="radio"
+                name="plan"
+                className="hidden"
+                onChange={() => setSelected(pkg.id)}
+                checked={selected === pkg.id}
+              />
               <div className="flex items-center gap-3">
-                <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${selected === pkg.id ? 'border-yellow-400' : 'border-gray-300'}`}>
-                  {selected === pkg.id && <div className="w-2 h-2 rounded-full bg-yellow-400" />}
+                <div
+                  className={`w-4 h-4 rounded-full border flex items-center justify-center ${
+                    selected === pkg.id
+                      ? "border-yellow-400"
+                      : "border-gray-300"
+                  }`}
+                >
+                  {selected === pkg.id && (
+                    <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                  )}
                 </div>
                 <div className="text-left">
                   <p className="text-sm font-bold text-gray-900">{pkg.name}</p>
-                  {pkg.desc && <p className="text-[9px] font-bold text-gray-400">{pkg.desc}</p>}
+                  {pkg.desc && (
+                    <p className="text-[9px] font-bold text-gray-400">
+                      {pkg.desc}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="text-right">
                 <p className="text-sm font-bold">{pkg.price}</p>
-                <p className='text-[10px] text-gray-400 my-2 leading-none'>Per Video</p>
-                <p className="text-[10px] text-gray-400 line-through leading-none">{pkg.original}</p>
+                <p className="text-[10px] text-gray-400 my-2 leading-none">
+                  Per Video
+                </p>
+                <p className="text-[10px] text-gray-400 line-through leading-none">
+                  {pkg.original}
+                </p>
               </div>
             </label>
           </div>
@@ -91,18 +136,33 @@ export const PricingSection = () => {
 
       <Button className="w-2/3 py-4 text-lg mb-4 uppercase">Claim Offer</Button>
       <div className="flex items-center justify-center gap-1.5 text-[9px] text-gray-400 font-bold mb-4">
-        <Check size={10} className="text-green-500" /> SECURE CHECKOUT • 100% SATISFACTION GUARANTEED
+        <Check size={10} className="text-green-500" /> SECURE CHECKOUT • 100%
+        SATISFACTION GUARANTEED
       </div>
-      
+
       {/* Payment Icons */}
       <div className="flex justify-center gap-3  mb-6">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" className="h-4" alt="Visa" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" className="h-6" alt="Mastercard" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" className="h-5" alt="Paypal" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+          className="h-4"
+          alt="Visa"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+          className="h-6"
+          alt="Mastercard"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+          className="h-5"
+          alt="Paypal"
+        />
       </div>
 
       <p className="text-[9px] text-gray-400 leading-relaxed px-4">
-        By continuing, you agree to our Terms of Service and Privacy Policy. Pricing is subject to local taxes where applicable. Subscriptions renew automatically unless cancelled in settings 24h prior to period end.
+        By continuing, you agree to our Terms of Service and Privacy Policy.
+        Pricing is subject to local taxes where applicable. Subscriptions renew
+        automatically unless cancelled in settings 24h prior to period end.
       </p>
     </section>
   );

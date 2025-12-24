@@ -1,157 +1,155 @@
 import React from "react";
-import { Star, Square, BadgeCheck } from "lucide-react";
+import { BsFillStarFill } from "react-icons/bs";
+import { MdVerified } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa6";
 import { Button } from "../FlashbackAI/Button";
-
-// Import your curly arrow SVG here
-import CurlyArrow from "../../assets/curly-arrow.svg"; 
-
-const CurlyArrowPlaceholder = () => (
-  <svg width="45" height="45" viewBox="0 0 45 45" fill="none" className="text-yellow-500">
-    <path d="M10 35C15 35 25 30 25 20C25 15 20 12 18 15C16 18 20 25 35 25" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-    <path d="M30 20L36 25L30 30" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 const testimonials = [
   {
-    name: "Michael R.",
-    loc: "London, UK",
-    quote: "Seeing my grandfather smile again through this AI was a moment I'll never forget. The technology is simply magical.",
-    avatar: "MR",
+    before: "/loved1.png",
+    after: "/loved1.png",
+    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+    stars: 5,
+    text: "I animated an old photo of my childhood dog, Max. Seeing him move again – that little head tilt, his gentle expression – it brought me to tears. It felt like having a moment with him again..",
+    name: "Hannah",
+    location: "Sydney, Australia",
+    verified: true,
   },
   {
-    name: "Elena D.",
-    loc: "Madrid, Spain",
-    quote: "The way it handles old black and white photos is incredible. It gave my family history a whole new dimension.",
-    avatar: "ED",
+    before: "/loved2.png",
+    after: "/loved2.png",
+    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+    stars: 5,
+    text: "Incredible! My grandparents, seen in motion for the first time. The process was easy and the result was magical.",
+    name: "Elise",
+    location: "Paris, France",
+    verified: true,
   },
   {
-    name: "Sarah J.",
-    loc: "Berlin, Germany",
-    quote: "I used it for my wedding photos and the subtle movements added so much emotion. Highly recommend to everyone!",
-    avatar: "SJ",
+    before: "/loved3.png",
+    after: "/loved3.png",
+    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    stars: 5,
+    text: "I shared the video with my family — everyone was amazed. I can’t repeat enough how special this is.",
+    name: "Hans",
+    location: "Munich, Germany",
+    verified: true,
   },
   {
-    name: "John K.",
-    loc: "Toronto, Canada",
-    quote: "Simple, fast and results are better than any other tool I've tried. Worth every penny.",
-    avatar: "JK",
+    before: "/loved4.png",
+    after: "/loved4.png",
+    avatar: "https://randomuser.me/api/portraits/men/4.jpg",
+    stars: 5,
+    text: "This is unbelievable. FlashbackAI transformed a forgotten photo into a living memory. Highly recommended!",
+    name: "Liam",
+    location: "Toronto, Canada",
+    verified: true,
   },
   {
-    name: "Anika L.",
-    loc: "Mumbai, India",
-    quote: "It's like seeing a video that was never filmed. The movement feels very natural and respectful to the original photo.",
-    avatar: "AL",
+    before: "/loved5.png",
+    after: "/loved5.png",
+    avatar: "https://randomuser.me/api/portraits/men/5.jpg",
+    stars: 5,
+    text: "My father was speechless. The animation was so lifelike, it felt like he was with us again.",
+    name: "Salah",
+    location: "Dubai, UAE",
+    verified: true,
   },
   {
-    name: "David W.",
-    loc: "Sydney, Australia",
-    quote: "Customer support was great when I had a question, but the app is so easy you won't need them.",
-    avatar: "DW",
+    before: "/loved6.png",
+    after: "/loved6.png",
+    avatar: "https://randomuser.me/api/portraits/women/6.jpg",
+    stars: 5,
+    text: "A priceless gift. My children saw their great-grandparents move for the first time. Thank you!",
+    name: "Maria",
+    location: "Madrid, Spain",
+    verified: true,
   },
 ];
 
-const TestimonialCard = ({ user }) => (
-  <div className="bg-[#f2ede4] p-6 rounded-[2.5rem] border border-black/5 flex flex-col shadow-sm text-left">
-    {/* Stacked Image Container */}
-    <div className="relative mb-10 pt-4">
-      
-      {/* Main Large Image (After) */}
-      <div className="relative z-0 ml-10 shadow-xl rounded-[2rem] overflow-hidden border-[3px] border-[#7c602e] aspect-square">
-        <img
-          src={`https://i.pravatar.cc/400?u=${user.name}`}
-          className="w-full h-full object-cover grayscale brightness-90"
-          alt="Animated result"
-        />
-        {/* Play/Stop Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-12 h-12 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40">
-            <Square size={16} fill="white" className="text-white ml-0.5" />
+function Testimonials() {
+  return (
+    <div className="w-full flex flex-col items-center py-14 bg-[#fff] px-24">
+      {/* Heading */}
+      <div className="w-full flex flex-col items-center mb-8">
+        <span className="uppercase tracking-widest text-xs font-semibold text-[#7A693B] mb-2">
+          Testimonials
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
+          Loved by Thousands
+        </h2>
+        <p className="text-gray-700 text-sm md:text-base text-center max-w-2xl mb-1">
+          Thousands have already brought their treasured photos to life with
+          gentle, lifelike motion — now it’s your turn.
+        </p>
+        <span className="text-md text-gray-500 mb-2">
+          Trusted by over{" "}
+          <span className="text-[#7A693B] font-semibold">
+            60,000+ users worldwide
+          </span>
+        </span>
+      </div>
+      {/* Testimonials Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-10 w-full max-w-7xl px-2 md:px-0">
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className="bg-[#f2ebe2] rounded-2xl shadow p-5 flex flex-col border border-[#e5e0d6] relative min-h-[420px]"
+            style={{ boxShadow: "0 2px 12px 0 rgba(60, 40, 10, 0.07)" }}
+          >
+            {/* Double image with arrow overlay */}
+            <div className="relative mb-4 flex justify-center">
+              <div className="relative">
+                <img
+                  src={t.after}
+                  alt="after"
+                  className="w-52 h-52 rounded-xl object-cover"
+                />
+              </div>
+            </div>
+            {/* Stars */}
+            <div className="flex items-center mb-2 mt-2">
+              {[...Array(t.stars)].map((_, idx) => (
+                <BsFillStarFill
+                  key={idx}
+                  className="text-[#bfa76a] text-base mr-1"
+                />
+              ))}
+            </div>
+            {/* Quote */}
+            <p className="text-gray-800 text-[15px] italic mb-4 flex-1">
+              “{t.text}”
+            </p>
+            <div className="border-t border-[#e5e0d6] pt-3 flex items-center gap-3 mt-auto">
+              <img
+                src={t.avatar}
+                alt={t.name}
+                className="w-9 h-9 rounded-full object-cover border-2 border-white shadow"
+              />
+              <div>
+                <span className="font-semibold text-gray-900 block leading-tight">
+                  {t.name}
+                </span>
+                <span className="text-xs text-gray-500 block">
+                  {t.location}
+                </span>
+                {t.verified && (
+                  <span className="flex items-center text-xs text-[#1da1f2] mt-1 font-medium">
+                    <MdVerified className="mr-1 text-base" /> Verified user
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Small "Before" Thumbnail */}
-      <div className="absolute top-0 left-0 z-20 w-28 aspect-square rounded-[1.5rem] border-2 border-[#7c602e] overflow-hidden shadow-lg bg-gray-200">
-        <img
-          src={`https://i.pravatar.cc/150?u=${user.name}`}
-          className="w-full h-full object-cover grayscale blur-[0.5px]"
-          alt="Before"
-        />
-      </div>
-
-      {/* Curly Arrow */}
-      <div className="absolute top-14 left-[80px] z-30 scale-85 md:scale-100">
-        <img src={CurlyArrow} alt="" />
-      </div>
-    </div>
-
-    {/* Content Section */}
-    <div className="flex flex-col h-full">
-      {/* Stars - Matches Brown Theme */}
-      <div className="flex text-[#7c602e] gap-1 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} size={18} fill="currentColor" stroke="none" />
         ))}
       </div>
-
-      {/* Quote */}
-      <p className="text-[14px] text-gray-800 font-medium leading-relaxed tracking-tight mb-6 italic">
-        "{user.quote}"
-      </p>
-
-      {/* Footer Info */}
-      <div className="mt-auto border-t border-gray-300/60 pt-5 space-y-3">
-        <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-full bg-[#7c602e] text-white flex items-center justify-center text-xs font-bold border-2 border-white shadow-sm">
-            {user.avatar}
-          </div>
-          <div className="text-left">
-            <p className="text-[15px] font-bold text-gray-900 leading-none mb-1">
-              {user.name}
-            </p>
-            <p className="text-[12px] text-gray-500 font-medium">
-              {user.loc}
-            </p>
-          </div>
-        </div>
-
-        {/* Verified Badge */}
-        <div className="flex items-center gap-1.5">
-          <BadgeCheck size={18} fill="#3b82f6" className="text-white" />
-          <span className="text-[11px] font-bold uppercase tracking-wider">Verified user</span>
-        </div>
-      </div>
+      <Button className="bg-[#7A693B] hover:bg-[#5c522e] text-white px-8 py-3 rounded-full text-base font-semibold flex items-center gap-2 shadow-md">
+        <span className="flex items-center gap-2">
+          <FaArrowRight /> Try Now — Bring My Photo to Life
+        </span>
+      </Button>
     </div>
-  </div>
-);
+  );
+}
 
-export const Testimonials = () => (
-  <section className="py-24 px-6 bg-[#fdfcfb]">
-    <div className="w-11/12 mx-auto text-center">
-      <p className="text-[10px] text-[#7c602e] font-bold tracking-[0.3em] uppercase mb-4">
-        Testimonials
-      </p>
-      <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
-        Loved by Thousands
-      </h2>
-      <p className="text-gray-500 text-sm md:text-base mb-16 max-w-xl mx-auto font-medium">
-        Thousands have already brought their treasured photos to life with
-        gentle, lifelike motion — now it's your turn.
-      </p>
-
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        {testimonials.map((u, i) => (
-          <TestimonialCard key={i} user={u} />
-        ))}
-      </div>
-
-      <div className="mt-20">
-        <Button className="px-12 py-5 shadow-2xl hover:translate-y-[-2px] bg-[#7c602e] text-white rounded-full font-bold text-lg">
-          Bring Your Photos To Life
-        </Button>
-      </div>
-    </div>
-  </section>
-);
+export default Testimonials;

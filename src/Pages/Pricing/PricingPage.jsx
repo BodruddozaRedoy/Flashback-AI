@@ -2,9 +2,9 @@ import React from "react";
 import { PricingSection } from "./PricingSection";
 import { StatsSection } from "./StatsSection";
 import { WhyChoose } from "./WhyChoose";
-import { Testimonials } from "./Testimonials";
 import AnnouncementBar from "../../Shared/AnnouncementBar";
 import Footer from "../../Shared/Footer";
+import Testimonials from "./Testimonials";
 
 export default function PricingPage() {
   return (
