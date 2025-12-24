@@ -8,6 +8,8 @@ import PricingPage from "../Pages/Pricing/PricingPage";
 import LoginPage from "../Pages/Authentication/SignIn";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import { GetCoinsPage } from "../Pages/Dashboard/GetCoinsPage";
+import { DashboardLayout } from "../Pages/Dashboard/DashboardLayout";
+import { DashboardHome } from "../Pages/Dashboard/DashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -36,10 +38,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/dashboard/get-coins",
-    element: <GetCoinsPage />,
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashboardHome />,
+      },
+      {
+        path: "get-coins",
+        element: <GetCoinsPage />,
+      },
+    ],
   },
 ]);
