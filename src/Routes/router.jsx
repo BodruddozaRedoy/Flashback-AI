@@ -12,6 +12,7 @@ import { DashboardLayout } from "../Pages/Dashboard/DashboardLayout";
 import { DashboardHome } from "../Pages/Dashboard/DashboardHome";
 import { InviteFriendsPage } from "../Pages/Dashboard/InviteFriendsPage";
 import { MomentsGallery } from "../Pages/Dashboard/MomentsGallery";
+import { ProfileSettingsPage } from "../Pages/Dashboard/ProfileSettingsPage";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "moments",
         element: <MomentsGallery />,
+      },
+      {
+        path: "settings",
+        element: <ProfileSettingsPage />,
       },
     ],
   },

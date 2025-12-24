@@ -104,7 +104,10 @@ export const Sidebar = ({ className }) => {
 
       {/* Profile & Footer */}
       <div className="space-y-4">
-        <div className="border border-gray-100 rounded-2xl p-3 flex items-center justify-between bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+        <div
+          onClick={() => navigate("/dashboard/settings")}
+          className="border border-gray-100 rounded-2xl p-3 flex items-center justify-between bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+        >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-[#f2ede4] flex items-center justify-center text-[#7c602e]">
               <User size={20} fill="currentColor" />

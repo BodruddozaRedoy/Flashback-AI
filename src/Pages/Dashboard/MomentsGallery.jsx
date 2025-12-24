@@ -49,15 +49,15 @@ export const MomentsGallery = () => {
   return (
     <div className="flex-1 bg-[#fdfcfb] p-6 md:p-10 animate-in fade-in duration-500 overflow-y-auto">
       {/* Grid Layout - 2 columns on mobile/tablet, adjustments for larger screens */}
-      <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+      <div className="max-w-[30rem] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
         {momentsData.map((moment) => (
           <MomentCard key={moment.id} moment={moment} />
         ))}
       </div>
-      
+
       {/* Optional: Add a "New Upload" Floating Action Button if needed */}
       <div className="fixed bottom-10 right-10">
-          {/* You could add your upload button here if you want it always visible */}
+        {/* You could add your upload button here if you want it always visible */}
       </div>
     </div>
   );
